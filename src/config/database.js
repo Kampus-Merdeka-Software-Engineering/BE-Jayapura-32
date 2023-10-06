@@ -16,4 +16,7 @@ const conn = new sequelize.Sequelize("mysql://avnadmin:AVNS_2vVlGSrZRSGj5xMDH5W@
     logging: false
 });
 
-module.exports = dbPool.promise();
+module.exports = {
+    dbPool,
+    conn,
+}
