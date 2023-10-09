@@ -29,7 +29,7 @@ app.listen(port, function () {
           console.log("Database terhubung")
       })
       .catch(function (err) {
-          console.log("Database gagal terhubung karena:", err)
+          console.log("Database gagal terhubung karena: ", err)
       })
   console.log("server start on", port)
 })
