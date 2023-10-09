@@ -3,7 +3,7 @@ const email_cb = require("../models/email_cb");
 // CREATE: untuk menambahkan data ke tabel testimoni
 exports.create = (req, res) => {
   // validate request
-  if (!req.body.email) {
+  if (!req.body.email_cb) {
     return res.status(400).send({
       message: "email tidak boleh kosong",
     });
@@ -11,7 +11,7 @@ exports.create = (req, res) => {
 
   // mengambil data yang dikirimkan oleh client
   const email_cb = {
-    email: req.body.email,
+    email_cb: req.body.email_cb,
   };
 
   // proses menyimpan kedalam database

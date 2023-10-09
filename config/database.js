@@ -10,10 +10,9 @@ const dbPool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
-const conn = new Sequelize("mysql://avnadmin:AVNS_2vVlGSrZRSGj5xMDH5W@mysql-24bae64d-revou32.aivencloud.com:27319/defaultdb?ssl-mode=REQUIRED", {
+const conn = new Sequelize("mysql://avnadmin:AVNS_2vVlGSrZRSGj5xMDH5W@mysql-24bae64d-revou32.aivencloud.com:27319/group32?ssl-mode=REQUIRED", {
     ssl: fs.readFileSync(path.join(__dirname, 'ca.pem')),
     dialect: 'mysql',
-    
   });
     
 module.exports= conn;
