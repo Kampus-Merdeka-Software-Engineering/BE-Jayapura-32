@@ -1,24 +1,35 @@
-const express = require('express');
-const sequelize = require('./config/database');
+// const sequelize = require('./config/database');
+// const app = express();
+// const port = process.env.dbPort || 3000;
+// const email_cb = require('./routes/email_cb');
+// const user_review = require('./routes/user_review');
+// const db = require('./config/database')
+
+const express = require("express") // ini perlu
+const cors = require('cors');
+const path = require('path'); //tidak perlu npm install
+const db = require('./config/database')
+// init express server and router
 const app = express();
-const port = process.env.dbPort || 3000;
 const email_cb = require('./routes/email_cb');
 const user_review = require('./routes/user_review');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-sequelize.sync({ force: false }).then(() => {
-    console.log('Database synced successfully');
-  }).catch((error) => {
-    console.error('Error syncing database:', error);
-  });
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(cors());
+app.use(express.json()); // supaya express bisa response json
+app.use(express.urlencoded({ extended: false })); // supaya express bisa menerima body
 
 app.use('/api/email_cb', email_cb);
 app.use('/api/user_review', user_review);
 
-app.listen(port, () => console.log(`App listening on port http://localhost:${port}`));
+const port = 3000;
+
+app.listen(port, function () {
+  db.authenticate()
+      .then(function () {
+          console.log("Database terhubung")
+      })
+      .catch(function (err) {
+          console.log("Database gagal terhubung karena:", err)
+      })
+  console.log("server start on", port)
+})
