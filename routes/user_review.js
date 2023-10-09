@@ -1,7 +1,8 @@
-const router = require('express').Router();
-const user_review = require('../controllers/user_review');
+const express = require('express');
+const router = express.Router();
+const controller = require("../controllers/index")
 
-router.post('/add', user_review.create);
-router.get('/', user_review.findAll);
+router.post('/add', controller.userPost);
+router.get('/', controller.userGet);
 
 module.exports = router;

@@ -1,7 +1,10 @@
-const email_cb = require('../controllers/email_cb');
-const router = require('express').Router();
+// const email_cb = require('../controllers/email_cb');
+// const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
+const controller = require("../controllers/index")
 
-router.post('/add', email_cb.create);
-router.get('/', email_cb.findAll);
+router.post('/add', controller.emailPost);
+router.get('/', controller.emailGet);
 
 module.exports = router;

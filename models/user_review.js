@@ -16,10 +16,6 @@ const user_review = sequelize.define('user_review', {
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    no_phone: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
     message: {
         type: DataTypes.TEXT,
         allowNull: false,

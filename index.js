@@ -21,4 +21,4 @@ app.get('/', (req, res) => {
 app.use('/api/email_cb', email_cb);
 app.use('/api/user_review', user_review);
 
-app.listen(port, () => console.log(`App listening on port http://localhost:${port}!`));
+app.listen(port, () => console.log(`App listening on port http://localhost:${port}`));
