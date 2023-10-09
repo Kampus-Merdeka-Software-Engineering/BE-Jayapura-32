@@ -1,7 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/database');
 const app = express();
-const port = 3000;
+const port = process.env.dbPort || 3000;
 const email_cb = require('./routes/email_cb');
 const user_review = require('./routes/user_review');
 
