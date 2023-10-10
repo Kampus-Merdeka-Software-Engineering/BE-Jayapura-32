@@ -16,10 +16,8 @@ const user_review = require('./routes/user_review');
 const bodyParser = require('body-parser');
 
 app.use(cors());
-// app.use(express.json()); // supaya express bisa response json
-// app.use(express.urlencoded({ extended: false })); // supaya express bisa menerima body
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json()); // supaya express bisa response json
+app.use(express.urlencoded({ extended: false })); // supaya express bisa menerima body
 
 app.use('/api/email_cb', email_cb);
 app.use('/api/user_review', user_review);
