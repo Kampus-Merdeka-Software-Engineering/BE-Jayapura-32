@@ -5,6 +5,6 @@ const router = express.Router();
 const controller = require("../controllers/index")
 
 router.post('/add', controller.emailPost);
-router.get('/', controller.emailGet);
+router.post('/', controller.emailGet);
 
 module.exports = router;
