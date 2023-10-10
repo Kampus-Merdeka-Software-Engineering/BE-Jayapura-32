@@ -34,7 +34,8 @@ async function userGet(req, res){
 
 async function userPost(req, res){
     try {
-        const userR = await userReview.create(req.body);
+        const {email, full_name, message, star } = req.body;
+        const userR = await userReview.create(email, full_name, message, star );
         res.json({ success: true, userR});
     } catch (err) {
         res.status(500).json({ success: false, error: err.message });
