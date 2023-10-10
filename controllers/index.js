@@ -5,7 +5,7 @@ async function emailGet(req, res){
     try {
         const email = await emailCB.findOne({
             where: {
-                email_cb: req.body.email_cb
+                id_cb: req.body.id_cb
             }
         });
         res.json(email);

@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 
-const email_cb = sequelize.define('email_callback', {  
+const email_cb = sequelize.define('email_cb', {  
     id_cb:{
         type: DataTypes.INTEGER, 
         primaryKey: true,
