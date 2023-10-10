@@ -11,15 +11,15 @@ const path = require('path'); //tidak perlu npm install
 const db = require('./config/database')
 // init express server and router
 const app = express();
-// const email_cb = require('./routes/email_cb');
+const email_cb = require('./routes/email_cb');
 const user_review = require('./routes/user_review');
 
 app.use(cors());
 app.use(express.json()); // supaya express bisa response json
-app.use(express.urlencoded({ extended: true })); // supaya express bisa menerima body
+app.use(express.urlencoded({ extended: false })); // supaya express bisa menerima body
 
-// app.use('/api/email_cb', email_cb);
-app.use('/api/', user_review);
+app.use('/api/email_cb', email_cb);
+app.use('/api/user_review', user_review);
 
 const port = 3000;
 
