@@ -24,6 +24,10 @@ app.use('/api/user_review', user_review);
 
 const port = 3000;
 
+app.get('/', function (req, res, next) {
+    res.redirect('https://kampus-merdeka-software-engineering.github.io/FE-Jayapura-32/index.html')
+});
+
 app.listen(port, function () {
   db.authenticate()
       .then(function () {
